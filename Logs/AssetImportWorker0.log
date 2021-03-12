@@ -2408,3 +2408,19 @@ System memory in use after: 80.2 MB.
 Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 2349.
 Total: 2.203900 ms (FindLiveObjects: 0.275600 ms CreateObjectMapping: 0.078400 ms MarkObjects: 1.822800 ms  DeleteObjects: 0.025900 ms)
 
+========================================================================
+Received Import Request.
+  Time since last request: 953.337234 seconds.
+  path: Assets/Scripts/DrawLine.cs
+  artifactKey: Guid(8afb9f2bbc7fe4145b97682bf63dc71b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/DrawLine.cs using Guid(8afb9f2bbc7fe4145b97682bf63dc71b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df4963d915d9337ce463c56e77aa3796') in 0.006978 seconds
+  Import took 0.011279 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 185.160069 seconds.
+  path: Assets/Scenes/Balldrop4Live - extOSC - NewLineSystem.unity
+  artifactKey: Guid(424d16ccc4272d64a9b60b0084cab40a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Balldrop4Live - extOSC - NewLineSystem.unity using Guid(424d16ccc4272d64a9b60b0084cab40a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25a6d96343082cd9b6f052c307f41968') in 0.011811 seconds
+  Import took 0.015786 seconds .
+
