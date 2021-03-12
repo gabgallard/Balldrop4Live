@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: Address
       value: /1/pink
       objectReference: {fileID: 0}
+    - target: {fileID: 2643307470553221613, guid: ccd943227b7ac6b4694fd90164a7d1d0,
+        type: 3}
+      propertyPath: Velocity
+      value: /1/pinkVel
+      objectReference: {fileID: 0}
     - target: {fileID: 4826802548068804846, guid: ccd943227b7ac6b4694fd90164a7d1d0,
         type: 3}
       propertyPath: m_Color.b

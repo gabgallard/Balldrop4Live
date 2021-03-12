@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 4826802549493422982}
   - component: {fileID: 2643307470553221613}
   - component: {fileID: -3813108069137850839}
+  - component: {fileID: 1191853953763234830}
   m_Layer: 0
   m_Name: Ball
   m_TagString: blue
@@ -167,6 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Address: /1/unityTest
+  Velocity: 
   button: {fileID: 0}
   mus: {fileID: -3813108069137850839}
   musArray:
@@ -279,3 +281,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1191853953763234830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4826802549493422987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40120c16d54604c44b6c59eb3db5215b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
