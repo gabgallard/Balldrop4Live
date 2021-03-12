@@ -205,12 +205,12 @@ namespace extOSC.UI
 
 		#region Protected Methods
 
-		protected virtual void Set(bool input)
+		public virtual void Set(bool input)
 		{
 			Set(input, true);
 		}
 
-		protected virtual void Set(bool input, bool sendCallback)
+		public virtual void Set(bool input, bool sendCallback)
 		{
 			_value = input;
 
