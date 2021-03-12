@@ -21,10 +21,10 @@ MonoBehaviour:
     y: 30
     width: 1474
     height: 771
-  m_MinSize: {x: 680, y: 492}
-  m_MaxSize: {x: 14003, y: 14042}
+  m_MinSize: {x: 680, y: 471}
+  m_MaxSize: {x: 14002, y: 14021}
   vertical: 1
-  controlID: 37385
+  controlID: 44406
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 680, y: 221}
   m_MaxSize: {x: 12005, y: 4021}
   vertical: 0
-  controlID: 37386
+  controlID: 44407
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -205,9 +205,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 635.663, y: 1207.7719, z: -28.266523}
+    m_Target: {x: 287.09027, y: 1148.082, z: 0}
     speed: 2
-    m_Value: {x: 635.663, y: 1207.7719, z: -28.266523}
+    m_Value: {x: 287.09027, y: 1148.082, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -258,9 +258,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 246.81825
+    m_Target: 10
     speed: 2
-    m_Value: 246.81825
+    m_Value: 10
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -330,8 +330,8 @@ MonoBehaviour:
     y: 0
     width: 623.2
     height: 347.2
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 2}
@@ -396,8 +396,8 @@ MonoBehaviour:
     m_CachedPref: -151
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -105676
-  m_LastVerticalScrollValue: 108
+  m_LastInspectedObjectInstanceID: -102484
+  m_LastVerticalScrollValue: 1033.6
   m_GlobalObjectId: 
   m_LockTracker:
     m_IsLocked: 0
@@ -453,10 +453,10 @@ MonoBehaviour:
     y: 347.2
     width: 1474
     height: 423.8
-  m_MinSize: {x: 433, y: 271}
-  m_MaxSize: {x: 14003, y: 10021}
+  m_MinSize: {x: 432, y: 250}
+  m_MaxSize: {x: 14002, y: 10000}
   vertical: 0
-  controlID: 37347
+  controlID: 44361
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -527,21 +527,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts
+  - Assets
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\darkg\Documents\GitHub\Gravity-Music
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: c0410000
-    m_LastClickedID: 16832
+    m_SelectedIDs: 78410000
+    m_LastClickedID: 16760
     m_ExpandedIDs: 00000000784100007c4100007e410000804100008241000084410000ca49000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -595,8 +595,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 3463feff
-    m_LastClickedInstanceID: -105676
+    m_SelectedInstanceIDs: ac6ffeff
+    m_LastClickedInstanceID: -102484
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 9c930000ba93000084930000969300007e930000d8930000a03400008ae5ffff00000000
     m_RenameOverlay:
@@ -680,7 +680,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -105676
+  m_LastSelectedObjectID: -102484
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1001,7 +1001,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: ac6ffeff9876feff328efeff6e9cffff849cffff92c7ffff98c8ffff40ceffffe2d6ffff6cdaffff3edeffff52e0ffffc6e0ffff4efbffff344c0000724c0000
+      m_ExpandedIDs: ac6ffeff008bfeff328efeff6e9cffff849cffff92c7ffff98c8ffff40ceffffe2d6ffff6cdaffff3edeffff52e0ffffc6e0ffff4efbffff344c0000724c0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 

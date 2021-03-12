@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using extOSC;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -32,8 +33,8 @@ public class SpawnManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-
+    { 
+    
     }
 
     public void SpawnSphereWhite()

@@ -61,7 +61,6 @@
     <Compile Include="Assets\extOSC\Examples\01) Getting Started\Scripts\SimpleMessageReceiver.cs" />
     <Compile Include="Assets\Scripts\DrawLine.cs" />
     <Compile Include="Assets\Scripts\SpawnManager.cs" />
-    <Compile Include="Assets\Scripts\DestroyObjects.cs" />
     <Compile Include="Assets\extOSC\Examples\04) Informers\Scripts\InformersExample.cs" />
     <Compile Include="Assets\extOSC\Examples\01) Getting Started\Scripts\SimpleMessageTransmitter.cs" />
     <Compile Include="Assets\DetectCollision.cs" />
@@ -76,8 +75,10 @@
     <Compile Include="Assets\extOSC\Examples\11) Array\Scripts\ArrayExample.cs" />
     <Compile Include="Assets\Scripts\Test.cs" />
     <Compile Include="Assets\Scripts\Manager.cs" />
-    <Compile Include="Assets\Scripts\BallDestruction.cs" />
+    <Compile Include="Assets\Scripts\DestroyOutOfBounds.cs" />
     <Compile Include="Assets\Scripts\SettingsPanel.cs" />
+    <Compile Include="Assets\Scripts\DestroyBall.cs" />
+    <Compile Include="Assets\Scripts\DestroyObjects.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\extOSC\versions.txt" />
