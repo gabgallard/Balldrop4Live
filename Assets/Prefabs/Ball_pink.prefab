@@ -32,6 +32,11 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4826802548068804846, guid: ccd943227b7ac6b4694fd90164a7d1d0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d8044a9e15b51734098ad9ecb207d23a, type: 2}
     - target: {fileID: 4826802549493422984, guid: ccd943227b7ac6b4694fd90164a7d1d0,
         type: 3}
       propertyPath: m_RootOrder
@@ -90,7 +95,7 @@ PrefabInstance:
     - target: {fileID: 4826802549493422987, guid: ccd943227b7ac6b4694fd90164a7d1d0,
         type: 3}
       propertyPath: m_Name
-      value: Ball_pink 2
+      value: Ball_pink
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccd943227b7ac6b4694fd90164a7d1d0, type: 3}
