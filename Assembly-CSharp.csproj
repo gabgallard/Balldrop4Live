@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scripts\GeneralControls.cs" />
     <Compile Include="Assets\Scripts\InputManager.cs" />
     <Compile Include="Assets\Scripts\LineManager.cs" />
+    <Compile Include="Assets\Scripts\Utils.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\extOSC\versions.txt" />

@@ -34,7 +34,7 @@ public class LineManager : MonoBehaviour
         inputManager = GetComponent<InputManager>();
         mainCamera = Camera.main;
     }
-  private void OnEnable()
+    private void OnEnable()
     {
         inputManager.OnStartDraw += OnStartDraw;
         inputManager.OnEndDraw += OnEndDraw;
@@ -50,22 +50,15 @@ public class LineManager : MonoBehaviour
         inputManager.OnEndErase -= OnEndErase;
     }
 
+    #region Drawing
     private void OnStartDraw()
     {
-        if(!erasing) //to not draw while erasing
-        StartCoroutine("Drawing");
+        if (!erasing) //to not draw while erasing
+            StartCoroutine("Drawing");
     }
     private void OnEndDraw()
     {
         drawing = false;
-    }
-    private void OnStartErase()
-    {
-
-    }
-    private void OnEndErase()
-    {
-
     }
 
     IEnumerator Drawing()
@@ -98,19 +91,14 @@ public class LineManager : MonoBehaviour
         currentLineRenderer.material = new Material(Shader.Find("Particles/Standard Unlit"));
         currentLineRenderer.startColor = lineColor;
         currentLineRenderer.endColor = lineColor;
-        currentLineEdgeCollider.edgeRadius = .1f;
+        currentLineEdgeCollider.edgeRadius = .05f;
+        currentLineObject.layer = 0b110; //0b110 is binary for "6", as for layer 6 
     }
 
     private void EndLine()
     {
         currentLineEdgeCollider.SetPoints(currentLine);
     }
-
-    private Vector2 GetCurrentWorldPoint()
-    {
-        return mainCamera.ScreenToWorldPoint(inputManager.GetMousePosition());
-    }
-
     private void AddPoint(Vector2 point)
     {
         if (PlacePoint(point))
@@ -120,12 +108,47 @@ public class LineManager : MonoBehaviour
             currentLineRenderer.SetPosition(currentLineRenderer.positionCount - 1, point);
         }
     }
-
     private bool PlacePoint(Vector2 point)
     {
         if (currentLine.Count == 0) return true;
         if (Vector2.Distance(point, currentLine[currentLine.Count - 1]) < lineSeparationDistance)
             return false;
         return true;
+    }
+    #endregion
+    private void OnStartErase()
+    {
+        if (!drawing)
+            StartCoroutine("Erasing");
+    }
+    private void OnEndErase()
+    {
+        erasing = false;
+    }
+
+    IEnumerator Erasing()
+    {
+        erasing = true;
+        while (erasing)  
+        {
+            Vector2 screenMousePosition = GetCurrentScreenPoint();
+            GameObject g = Utils.Raycast(mainCamera, screenMousePosition, LayerMask.GetMask("Lines")); //0b110 is binary for "6", as for layer 6 
+            if (g != null) DestroyLine(g);
+            yield return null;
+        }
+    }
+
+    private void DestroyLine(GameObject g)
+    {
+        Destroy(g);
+    }
+
+    private Vector2 GetCurrentScreenPoint()
+    {
+        return inputManager.GetMousePosition();
+    }
+    private Vector2 GetCurrentWorldPoint()
+    {
+        return mainCamera.ScreenToWorldPoint(inputManager.GetMousePosition());
     }
 }
