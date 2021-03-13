@@ -4,16 +4,33 @@ using UnityEngine;
 
 public class DestroyBall : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private GeneralControls keyboardControls;
+
+    private void Awake()
     {
-        
+        keyboardControls = new GeneralControls();
+        keyboardControls.Keyboard.DestroyBalls.performed += _ => DestroyObject();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-            Destroy(gameObject);
+        keyboardControls.Enable();
     }
+
+    private void OnDisable()
+    {
+        keyboardControls.Disable();
+    }
+    void Start()
+    {
+
+    }
+
+
+    private void DestroyObject()
+    {
+        Destroy(gameObject);
+    }
+
+  
 }

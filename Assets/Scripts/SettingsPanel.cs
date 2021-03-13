@@ -4,13 +4,33 @@ using UnityEngine;
 
 public class SettingsPanel : MonoBehaviour
 {
+    private GeneralControls keyboardControls;
     [SerializeField] private GameObject settingsPanel;
-    [SerializeField] private bool isDisplayed;
+    public bool isDisplayed;
+    
+    private void Awake()
+    {
+        isDisplayed = false;
+        keyboardControls = new GeneralControls();
+    }
+
+    private void OnEnable()
+    {
+        keyboardControls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        keyboardControls.Disable();
+    }
 
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F1))
+        if (isDisplayed == false) { keyboardControls.Keyboard.Settings.performed += _ => ActivateMenu(); }
+
+        else { keyboardControls.Keyboard.Settings.performed += _ => DeactivateMenu(); }
+        /*if (Input.GetKeyDown(KeyCode.F1))
         {
             isDisplayed = !isDisplayed;
         }
@@ -19,12 +39,12 @@ public class SettingsPanel : MonoBehaviour
         { ActivateMenu(); }
 
         else
-        { DeactivateMenu(); }
+        { DeactivateMenu(); } */
     }
 
     void ActivateMenu()
-    { settingsPanel.SetActive(true); }
+    { settingsPanel.SetActive(true); isDisplayed = true; }
 
     void DeactivateMenu()
-    { settingsPanel.SetActive(false); }
+    { settingsPanel.SetActive(false); isDisplayed = false; }
 }

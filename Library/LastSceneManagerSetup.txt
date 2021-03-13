@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Balldrop4Live.unity
+- path: Assets/Scenes/Balldrop4Live - extOSC - NewLineSystem.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
