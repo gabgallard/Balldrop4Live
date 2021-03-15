@@ -21,12 +21,12 @@ public class InputManager : MonoBehaviour
         mouseControls = new GeneralControls();
     }
 
-    private void OnEnable()
+    public void OnEnable()
     {
         mouseControls.Enable();
     }
 
-    private void OnDisable()
+    public void OnDisable()
     {
         mouseControls.Disable();
     }

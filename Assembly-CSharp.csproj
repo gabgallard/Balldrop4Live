@@ -84,6 +84,8 @@
     <Compile Include="Assets\extOSC\Examples\12) Match Pattern\Scripts\MatchPatternExample.cs" />
     <Compile Include="Assets\extOSC\Examples\11) Array\Scripts\ArrayExample.cs" />
     <Compile Include="Assets\Scripts\RemoteHostSetter.cs" />
+    <Compile Include="Assets\CameraResizeManager.cs" />
+    <Compile Include="Assets\MouseModifier.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\extOSC\versions.txt" />
