@@ -40,11 +40,6 @@ public class InputManager : MonoBehaviour
         //Cursor.lockState = CursorLockMode.Confined;
     }
 
-    public float GetZoom()
-    {
-        return mouseControls.Mouse.Zoom.ReadValue<float>();
-    }
-
     public Vector2 GetMousePosition()
     {
         return mouseControls.Mouse.Position.ReadValue<Vector2>();
