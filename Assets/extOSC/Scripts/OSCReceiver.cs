@@ -56,7 +56,12 @@ namespace extOSC
 			}
 		}
 
-		public int LocalPort
+        public void Bind(string rateAddress, object receiveFloat)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int LocalPort
 		{
 			get => _localPort;
 			set

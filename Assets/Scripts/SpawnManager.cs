@@ -5,6 +5,8 @@ using extOSC;
 
 public class SpawnManager : MonoBehaviour
 {
+    public OSCReceiver Receiver;
+
     public GameObject[] spherePrefabs;
     public float spawnBlueX;
     public float spawnPinkX;
@@ -17,6 +19,11 @@ public class SpawnManager : MonoBehaviour
 
     public float spawnRate;
 
+    //public string NewRate;
+
+    private const string _rateAddress = "/2/spawnRate";
+
+
     // Start is called before the first frame update
     private void Awake()
     {
@@ -26,15 +33,22 @@ public class SpawnManager : MonoBehaviour
         SpawnSphereGreen();
         SpawnSphereRed();
     }
-
     private void Start()
     {
+        //Receiver.Bind(_rateAddress, ReceiveFloat);
         InvokeRepeating("SpawnSphereWhite", spawnRate, spawnRate);
         InvokeRepeating("SpawnSphereRed", spawnRate, spawnRate);
         InvokeRepeating("SpawnSphereGreen", spawnRate, spawnRate);
         InvokeRepeating("SpawnSphereBlue", spawnRate, spawnRate);
         InvokeRepeating("SpawnSpherePink", spawnRate, spawnRate);
+        Debug.Log("Spawn Rate: " + spawnRate);
     }
+
+    private void Update()
+    {
+        //SetSpawnRate(OSCMessage _rateAddress);
+    }
+    #region SphereSpawnMethods
     public void SpawnSphereBlue()
     {
         Vector3 spawnPos = new Vector3(spawnBlueX, spawnY, 0);
@@ -65,5 +79,19 @@ public class SpawnManager : MonoBehaviour
         Vector3 spawnPos = new Vector3(spawnRedX, spawnY, 0);
         //spawns the object
         Instantiate(spherePrefabs[4], spawnPos, spherePrefabs[4].transform.rotation);
+    }
+    #endregion
+
+    
+    public void SetSpawnRate()
+    {
+       /* if (OSCMessage.ToFloat(out var newRate))
+        {
+            //var message = new OSCMessage("/2/spawnRate");
+            //message.ToFloat(out float newRate);
+            spawnRate = newRate;
+            //Debug.Log("Spawn Rate: " + spawnRate);
+        }*/
+       
     }
 }
