@@ -664,7 +664,6 @@ GameObject:
   m_Component:
   - component: {fileID: 573498864}
   - component: {fileID: 573498863}
-  - component: {fileID: 573498865}
   m_Layer: 0
   m_Name: SpawnManager
   m_TagString: Untagged
@@ -684,7 +683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d858402db185aef42a2d82969c03ee86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Receiver: {fileID: 0}
+  Receiver: {fileID: 857708952}
   spherePrefabs:
   - {fileID: 798376983476506885, guid: 2a3e8ee55a75c33429e7df45af539e7d, type: 3}
   - {fileID: 798376983476506885, guid: 248536e4ad38710498cae886e3ac462a, type: 3}
@@ -698,6 +697,12 @@ MonoBehaviour:
   spawnRedX: 7
   spawnY: 5.2
   spawnRate: 3
+  spawnCooldown: 0
+  isBlueOn: 1
+  isPinkOn: 1
+  isWhiteOn: 1
+  isGreenOn: 1
+  isRedOn: 1
 --- !u!4 &573498864
 Transform:
   m_ObjectHideFlags: 0
@@ -712,36 +717,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &573498865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 573498862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b117a0703b374103913db889311565f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _receiver: {fileID: 857708952}
-  _address: /2/spawnRate
-  _mapBundle: {fileID: 0}
-  onReceive:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 573498863}
-        m_TargetAssemblyTypeName: SpawnManager, Assembly-CSharp
-        m_MethodName: SetSpawnRate
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!850595691 &584263641
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -937,7 +912,7 @@ MonoBehaviour:
   _mapBundle: {fileID: 0}
   _workInEditor: 0
   _localHostMode: 1
-  _localHost: 192.168.178.71
+  _localHost: 127.0.0.1
   _localPort: 9002
 --- !u!114 &857708953
 MonoBehaviour:

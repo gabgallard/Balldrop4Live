@@ -15,39 +15,50 @@ public class SpawnManager : MonoBehaviour
     public float spawnRedX;
  
     public float spawnY;
-    //private float spawnDelay = 2;
 
     public float spawnRate;
-
-    //public string NewRate;
+    public float spawnCooldown;
 
     private const string _rateAddress = "/2/spawnRate";
 
-
     // Start is called before the first frame update
-    private void Awake()
-    {
-        SpawnSphereBlue();
-        SpawnSpherePink();
-        SpawnSphereWhite();
-        SpawnSphereGreen();
-        SpawnSphereRed();
-    }
+
     private void Start()
     {
-        //Receiver.Bind(_rateAddress, ReceiveFloat);
-        InvokeRepeating("SpawnSphereWhite", spawnRate, spawnRate);
-        InvokeRepeating("SpawnSphereRed", spawnRate, spawnRate);
-        InvokeRepeating("SpawnSphereGreen", spawnRate, spawnRate);
-        InvokeRepeating("SpawnSphereBlue", spawnRate, spawnRate);
-        InvokeRepeating("SpawnSpherePink", spawnRate, spawnRate);
-        Debug.Log("Spawn Rate: " + spawnRate);
+        Receiver.Bind(_rateAddress, ReceiveFloat);
+        Receiver.Bind("/2/blueActivate", ReceiveInt);
+        Receiver.Bind("/2/pinkActivate", ReceiveInt);
+        Receiver.Bind("/2/whiteActivate", ReceiveInt);
+        Receiver.Bind("/2/greenActivate", ReceiveInt);
+        Receiver.Bind("/2/redActivate", ReceiveInt);
     }
 
     private void Update()
     {
-        //SetSpawnRate(OSCMessage _rateAddress);
+        spawnCooldown -= Time.deltaTime; //countdown for ball spawning
+        spawnCooldown = Mathf.Min(spawnCooldown, spawnRate);
+        if (spawnCooldown <= 0)
+        {
+            if (isBlueOn)
+            { SpawnSphereBlue(); }
+            if (isPinkOn)
+            { SpawnSpherePink(); }
+            if (isWhiteOn)
+            { SpawnSphereWhite(); }
+            if (isGreenOn)
+            { SpawnSphereGreen(); }
+            if (isRedOn)
+            { SpawnSphereRed(); }
+
+            spawnCooldown = spawnRate;
+        }
     }
+    public bool isBlueOn;
+    public bool isPinkOn;
+    public bool isWhiteOn;
+    public bool isGreenOn;
+    public bool isRedOn;
+
     #region SphereSpawnMethods
     public void SpawnSphereBlue()
     {
@@ -81,17 +92,37 @@ public class SpawnManager : MonoBehaviour
         Instantiate(spherePrefabs[4], spawnPos, spherePrefabs[4].transform.rotation);
     }
     #endregion
-
-    
-    public void SetSpawnRate()
+    public void ReceiveFloat(OSCMessage message)
     {
-       /* if (OSCMessage.ToFloat(out var newRate))
+        if (message.ToFloat(out var value))
         {
-            //var message = new OSCMessage("/2/spawnRate");
-            //message.ToFloat(out float newRate);
-            spawnRate = newRate;
-            //Debug.Log("Spawn Rate: " + spawnRate);
-        }*/
-       
+            spawnRate = value;
+        }
+    }
+    public void ReceiveInt(OSCMessage message) //receives bool from OSC
+    {
+        print(message.Address);
+        int value;
+        if (message.ToInt(out value))
+        { 
+            switch (message.Address) //switches between multiple Addresses (determined inside of the Max/MSP patch)
+            {
+                case "/2/blueActivate":
+                    isBlueOn = value !=0;
+                    break;
+                case "/2/pinkActivate":
+                    isPinkOn = value != 0;
+                    break;
+                case "/2/whiteActivate":
+                    isWhiteOn = value != 0;
+                    break;
+                case "/2/greenActivate":
+                    isGreenOn = value != 0;
+                    break;
+                case "/2/redActivate":
+                    isRedOn = value != 0;
+                    break;
+            }
+        }
     }
 }
