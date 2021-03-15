@@ -59,6 +59,7 @@
     <Compile Include="Assets\extOSC\Examples\07) Scripting\Scripts\ScriptingExample.cs" />
     <Compile Include="Assets\extOSC\Examples\03) Events\Scripts\EventsExample.cs" />
     <Compile Include="Assets\extOSC\Examples\01) Getting Started\Scripts\SimpleMessageReceiver.cs" />
+    <Compile Include="Assets\Scripts\InputManager.cs" />
     <Compile Include="Assets\Scripts\DrawLine.cs" />
     <Compile Include="Assets\Scripts\SpawnManager.cs" />
     <Compile Include="Assets\extOSC\Examples\04) Informers\Scripts\InformersExample.cs" />
@@ -66,23 +67,23 @@
     <Compile Include="Assets\extOSC\Examples\01) Getting Started\Scripts\SimpleMessageTransmitter.cs" />
     <Compile Include="Assets\Scripts\Manager.cs" />
     <Compile Include="Assets\DetectCollision.cs" />
+    <Compile Include="Assets\Scripts\GeneralControls.cs" />
     <Compile Include="Assets\Scripts\Test.cs" />
     <Compile Include="Assets\extOSC\Examples\13) Marshalling\Scripts\MarshallingExample.cs" />
     <Compile Include="Assets\extOSC\Examples\02) Value Types\Scripts\ValueTypesExample.cs" />
     <Compile Include="Assets\Scripts\DestroyBall.cs" />
+    <Compile Include="Assets\Scripts\LineManager.cs" />
     <Compile Include="Assets\extOSC\Examples\06) Mapping\Scripts\MappingExample.cs" />
     <Compile Include="Assets\Scripts\DestroyObjects.cs" />
     <Compile Include="Assets\extOSC\Examples\09) Address Masks\Scripts\AddressMaskExample.cs" />
     <Compile Include="Assets\Scripts\LineScript.cs" />
     <Compile Include="Assets\Scripts\SettingsPanel.cs" />
+    <Compile Include="Assets\Scripts\Utils.cs" />
     <Compile Include="Assets\extOSC\Examples\10) Ping\Scripts\PingExample.cs" />
     <Compile Include="Assets\Scripts\ImpactSounds.cs" />
     <Compile Include="Assets\extOSC\Examples\12) Match Pattern\Scripts\MatchPatternExample.cs" />
     <Compile Include="Assets\extOSC\Examples\11) Array\Scripts\ArrayExample.cs" />
-    <Compile Include="Assets\Scripts\GeneralControls.cs" />
-    <Compile Include="Assets\Scripts\InputManager.cs" />
-    <Compile Include="Assets\Scripts\LineManager.cs" />
-    <Compile Include="Assets\Scripts\Utils.cs" />
+    <Compile Include="Assets\Scripts\RemoteHostSetter.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\extOSC\versions.txt" />
@@ -683,32 +684,38 @@
     <Reference Include="Unity.2D.Sprite.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Postprocessing.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InputSystem">
       <HintPath>Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
     </Reference>
-    <Reference Include="com.unity.multiplayer-weaver.Editor">
-      <HintPath>Library\ScriptAssemblies\com.unity.multiplayer-weaver.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+    <Reference Include="Analytics">
+      <HintPath>Library\ScriptAssemblies\Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>Library\ScriptAssemblies\UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
-    <Reference Include="Analytics">
-      <HintPath>Library\ScriptAssemblies\Analytics.dll</HintPath>
+    <Reference Include="com.unity.multiplayer-weaver.Editor">
+      <HintPath>Library\ScriptAssemblies\com.unity.multiplayer-weaver.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
       <HintPath>Library\ScriptAssemblies\Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-hlapi.Runtime">
       <HintPath>Library\ScriptAssemblies\com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Postprocessing.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.XR.LegacyInputHelpers">
       <HintPath>Library\ScriptAssemblies\UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
@@ -731,21 +738,15 @@
     <Reference Include="UnityEngine.Advertisements.Editor">
       <HintPath>Library\ScriptAssemblies\UnityEngine.Advertisements.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="extOSC.Editor.csproj">
-      <Project>{123D5FA3-5422-EA75-4F2E-D201EBB3B25D}</Project>
-      <Name>extOSC.Editor</Name>
-    </ProjectReference>
     <ProjectReference Include="extOSC.csproj">
       <Project>{B0A1AB61-5E37-64B8-E31E-60243221FDB8}</Project>
       <Name>extOSC</Name>
+    </ProjectReference>
+    <ProjectReference Include="extOSC.Editor.csproj">
+      <Project>{123D5FA3-5422-EA75-4F2E-D201EBB3B25D}</Project>
+      <Name>extOSC.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

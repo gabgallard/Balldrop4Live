@@ -20,12 +20,17 @@ public class SpawnManager : MonoBehaviour
     public float spawnCooldown;
 
     private const string _rateAddress = "/2/spawnRate";
+    private const string _gravityAddress = "/2/gravity";
 
     // Start is called before the first frame update
 
     private void Start()
     {
         Receiver.Bind(_rateAddress, ReceiveFloat);
+        Receiver.Bind(_gravityAddress, ReceiveFloat);
+
+        Receiver.Bind("/2/pauseSpawning", ReceiveInt);
+
         Receiver.Bind("/2/blueActivate", ReceiveInt);
         Receiver.Bind("/2/pinkActivate", ReceiveInt);
         Receiver.Bind("/2/whiteActivate", ReceiveInt);
@@ -35,6 +40,8 @@ public class SpawnManager : MonoBehaviour
 
     private void Update()
     {
+        if (isPaused)
+            return;
         spawnCooldown -= Time.deltaTime; //countdown for ball spawning
         spawnCooldown = Mathf.Min(spawnCooldown, spawnRate);
         if (spawnCooldown <= 0)
@@ -58,7 +65,7 @@ public class SpawnManager : MonoBehaviour
     public bool isWhiteOn;
     public bool isGreenOn;
     public bool isRedOn;
-
+    public bool isPaused;
     #region SphereSpawnMethods
     public void SpawnSphereBlue()
     {
@@ -94,14 +101,23 @@ public class SpawnManager : MonoBehaviour
     #endregion
     public void ReceiveFloat(OSCMessage message)
     {
+        print(message.Address);
         if (message.ToFloat(out var value))
         {
-            spawnRate = value;
+            switch (message.Address)
+            {
+                case _rateAddress:
+                spawnRate = value;
+                    break;
+                case _gravityAddress:
+                    Physics2D.gravity = new Vector2(0f, -9.81f * value);
+                    break;
+            }
         }
     }
     public void ReceiveInt(OSCMessage message) //receives bool from OSC
     {
-        print(message.Address);
+        
         int value;
         if (message.ToInt(out value))
         { 
@@ -121,6 +137,10 @@ public class SpawnManager : MonoBehaviour
                     break;
                 case "/2/redActivate":
                     isRedOn = value != 0;
+                    break;
+                case "/2/pauseSpawning": //pauses the spawning event.
+                    spawnCooldown = 0.1f;
+                    isPaused = value != 0;
                     break;
             }
         }

@@ -10,7 +10,7 @@ public class SettingsPanel : MonoBehaviour
     
     private void Awake()
     {
-        isDisplayed = false;
+        isDisplayed = true;
         keyboardControls = new GeneralControls();
     }
 
